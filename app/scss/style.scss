@@ -1,7 +1,8 @@
 @import 'config';
 
 body {
-    background-color: #f5f6fa;
+    background: url(/img/dark-wall.jpg);
+    background-repeat: repeat;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -9,25 +10,27 @@ body {
     align-items: center;
 }
 
-
 .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
 
     .title-container h1 {
-        font-size: 1.75rem;
-        font-weight: 700;
-        color: rgb(73, 73, 73);
-        
+        font-size: 2rem;
+        font-weight: 500;
+        @include flux-text-animation;
+        animation: flux-text 2s linear infinite;
+        -moz-animation: flux-text 2s linear infinite;
+        -webkit-animation: flux-text 2s linear infinite;
+        margin-bottom: 0.5rem;
     }
 
     .image-wrapper {
         position: relative;
         background-color: #fff;
         height: 30rem;
-        width: 20rem;
-        @include box-shadow;
+        width: 22rem;
+        @include red-shadow;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -50,18 +53,16 @@ body {
             position: absolute;
             height: 100%;
             width: 30rem;
-
             display: flex;
             justify-content: center;
             align-items: center;
-            
             background: url('/img/foiltext.png') no-repeat center center;
             background-size: 100%;
             color: transparent;
             background-clip: text;
             -webkit-background-clip: text;
-            font-size: 1rem;
             transform: rotate(90deg);
+            font-size: 1rem;
 
             h1 {
                 padding-bottom: 1.25rem;
@@ -73,36 +74,34 @@ body {
         display: flex;
         justify-content: center;
         width: 100%;
+        margin-top: 1rem;
 
         input {
             width: 50%;
             background: #fff;
-            color: #444;
-            @include box-shadow;
+            color: rgb(0, 0, 0);
             border: 0;
             outline: 0;
             padding: 1rem 0.5rem;
+            @include flux-box-animation;
+            animation: flux-box 2s linear infinite;
+            -moz-animation: flux-box 2s linear infinite;
+            -webkit-animation: flux-box 2s linear infinite;
         }
 
         button {
             padding: 0.5rem 0.5rem;
             border: 0;
-            @include box-shadow;
             font-size: 1rem;
             font-weight: 500;
-            background-color: #0074D9;
+            background-color: #0084ff;
             color: #fff;
 
             &:hover {
-                background-color: #00b7ff;
-                color: #001f3f;
                 @include transition-ease;
+                @include blue-shadow;
                 cursor: pointer;
             }
-
-            &.active {
-                    animation-name: growth 3s ease-in;
-                }
         }
     }
 }
