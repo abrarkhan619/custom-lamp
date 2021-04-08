@@ -1,0 +1,1 @@
+{"version":3,"sources":["script.js"],"names":["$","click","inputVal","val","text","addClass"],"mappings":"AAAAA,EAAE,mBAAmBC,OAAM,WACvB,IAAIC,EAAWF,EAAE,SAASG,MAC1BH,EAAE,YAAYI,KAAKF,GACnBF,EAAE,SAASG,IAAI,IACfH,EAAE,UAAUK,SAAS","file":"script.js"}

@@ -1,0 +1,108 @@
+@import 'config';
+
+body {
+    background-color: #f5f6fa;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title-container h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: rgb(73, 73, 73);
+        
+    }
+
+    .image-wrapper {
+        position: relative;
+        background-color: #fff;
+        height: 30rem;
+        width: 20rem;
+        @include box-shadow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+
+        .img-container {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            img {
+                object-fit: contain;
+                z-index: 1;
+            }
+        }
+
+        .text-container {
+            position: absolute;
+            height: 100%;
+            width: 30rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            background: url('/img/foiltext.png') no-repeat center center;
+            background-size: 100%;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            font-size: 1rem;
+            transform: rotate(90deg);
+
+            h1 {
+                padding-bottom: 1.25rem;
+            }
+        }
+    }
+
+    .input-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        input {
+            width: 50%;
+            background: #fff;
+            color: #444;
+            @include box-shadow;
+            border: 0;
+            outline: 0;
+            padding: 1rem 0.5rem;
+        }
+
+        button {
+            padding: 0.5rem 0.5rem;
+            border: 0;
+            @include box-shadow;
+            font-size: 1rem;
+            font-weight: 500;
+            background-color: #0074D9;
+            color: #fff;
+
+            &:hover {
+                background-color: #00b7ff;
+                color: #001f3f;
+                @include transition-ease;
+                cursor: pointer;
+            }
+
+            &.active {
+                    animation-name: growth 3s ease-in;
+                }
+        }
+    }
+}
